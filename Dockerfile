@@ -1,8 +1,6 @@
 FROM phusion/baseimage:0.9.16
 MAINTAINER Kierran McPherson <kierranm@gmail.com>
-
-# use phusion/baseimage init system
-CMD ["/sbin/my_init"]
+ENV DEBIAN_FRONTEND noninteractive
 
 # Fix a Debianism of the nobody's uid being 65534
 RUN usermod -u 99 nobody
@@ -39,3 +37,6 @@ RUN chmod +x /etc/my_init.d/config.sh
 RUN mkdir /etc/service/sickrage
 ADD Assets/sickrage.sh /etc/service/sickrage/run
 RUN chmod +x /etc/service/sickrage/run
+
+# use phusion/baseimage init system
+CMD ["/sbin/my_init"]
