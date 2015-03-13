@@ -14,10 +14,10 @@ fi
 
 if [[ -n ${USERNAME} ]]; then
   echo "The username is: ${USERNAME}"
-  sed -i -e "s#\(.*\"sickrage-user\":\).*#\1 ${USERNAME},#g" $CONFIG/config.ini
+  sed -i "s/\"sickrage-user\"/${USERNAME}/g" $CONFIG/config.ini
 fi
 
 if [[ -n ${PASSWORD} ]]; then
   echo "The password is: ${PASSWORD}"
-  sed -i -e "s#\(.*\"sickrage-password\":\).*#\1 ${PASSWORD},#g" $CONFIG/config.ini
+  sed -i "s/"sickrage-password\"/${PASSWORD}/g" $CONFIG/config.ini
 fi
