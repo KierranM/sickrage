@@ -21,8 +21,8 @@ VOLUME /blackhole
 
 # clone the sickrage repo
 RUN git clone https://github.com/SiCKRAGETV/SickRage.git /sickrage
-RUN chown -R nobody:users /sickrage
-RUN chown -R nobody:users /sickrage/.git
+RUN chown -R root:users /sickrage
+RUN chown -R root:users /sickrage/.git
 RUN cp -a /sickrage/autoProcessTV/autoProcessTV.cfg.sample /sickrage/autoProcessTV/autoProcessTV.cfg
 
 # copy across the default config
