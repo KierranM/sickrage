@@ -4,7 +4,7 @@ cd /sickrage
 # update sickrage
 git pull
 
-CONFIG="/config/sickrage"
+CONFIG="/config"
 
 if [[ ! -f $CONFIG/config.ini ]]; then
   # copy the file to the config directory, making it if necessary
