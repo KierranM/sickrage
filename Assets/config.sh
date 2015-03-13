@@ -19,5 +19,5 @@ fi
 
 if [[ -n ${PASSWORD} ]]; then
   echo "The password is: ${PASSWORD}"
-  sed -i "s/"sickrage-password\"/${PASSWORD}/g" $CONFIG/config.ini
+  sed -i "s/\"sickrage-password\"/${PASSWORD}/g" $CONFIG/config.ini
 fi
