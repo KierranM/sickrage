@@ -10,14 +10,13 @@ RUN apt-get update && sudo apt-get install -y \
 
 # set the environment variables for sickrage
 ENV SB_HOME /sickrage
-ENV SB_DATA /config
+ENV SB_DATA /sickrage-data/config
 ENV SB_USER root
 
-# create some external mount points for sickrage data
-VOLUME /config
-VOLUME /tv
-VOLUME /downloads
-VOLUME /blackhole
+# create the external mount point for sickrage data
+# should contain /tv /config /blackhole
+# this allows hard linking of downloaded files
+VOLUME /sickrage-data
 
 # clone the sickrage repo
 RUN git clone https://github.com/SiCKRAGETV/SickRage.git /sickrage
